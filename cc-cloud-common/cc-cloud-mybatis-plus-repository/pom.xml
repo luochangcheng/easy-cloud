@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.luochangcheng</groupId>
+        <artifactId>cc-cloud-common</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>cc-cloud-mybatis-plus-repository</artifactId>
+    <name>cc-cloud-mybatis-plus-repository</name>
+    <description>cc-cloud-mybatis-plus-repository</description>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>io.github.luochangcheng</groupId>
+            <artifactId>cc-cloud-starter-mybatis-plus</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory><!--所在的目录-->
+                <includes><!--包括目录下的.xml文件都会扫描到-->
+                    <include>**/xml/*Mapper.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
+
+</project>

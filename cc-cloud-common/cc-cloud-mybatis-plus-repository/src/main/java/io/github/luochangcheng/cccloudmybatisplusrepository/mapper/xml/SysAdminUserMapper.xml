@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.github.luochangcheng.cccloudmybatisplusrepository.mapper.SysAdminUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="io.github.luochangcheng.cccloudmybatisplusrepository.po.SysAdminUserPo">
+        <id column="id" property="id" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+    </resultMap>
+
+    <select id="selectUser"
+            resultType="io.github.luochangcheng.cccloudmybatisplusrepository.model.user.SysAdminUserInfoVo">
+        select t1.id user_id, t1.username, t1.password
+        from sys_admin_user t1
+        where t1.username = #{username}
+          and t1.password = #{password}
+    </select>
+
+    <select id="selectRolesByUserId"
+            resultType="io.github.luochangcheng.cccloudmybatisplusrepository.model.user.BaseRole">
+        select t2.id role_id, t2.role_code, t2.role_name
+        from sys_admin_user_role t1
+                 left join sys_admin_role t2
+                           on t1.role_id = t2.id
+        where t1.user_id = #{userId}
+    </select>
+
+    <select id="selectAuthoritiesByUserId"
+            resultType="io.github.luochangcheng.cccloudmybatisplusrepository.model.user.BaseAuthority">
+        select t3.id authority_id, t3.authority_code, t3.authority_name
+        from sys_admin_user_role t1
+                 inner join sys_admin_role_authority t2
+                            on t1.role_id = t2.role_id
+                 left join sys_admin_authority t3
+                           on t2.authority_id = t3.id
+        where t1.user_id = #{userId}
+        union all
+        select t5.id authority_id, t5.authority_code, t5.authority_name
+        from sys_admin_user_authority t4
+                 left join sys_admin_authority t5
+                           on t4.authority_id = t5.id
+        where t4.user_id = #{userId}
+    </select>
+
+</mapper>

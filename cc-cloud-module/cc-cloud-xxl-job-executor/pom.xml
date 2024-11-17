@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.luochangcheng</groupId>
+        <artifactId>cc-cloud-module</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>cc-cloud-xxl-job-executor</artifactId>
+    <name>cc-cloud-xxl-job-executor</name>
+    <description>cc-cloud-xxl-job-executor</description>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>io.github.luochangcheng</groupId>
+            <artifactId>cc-cloud-starter-nacos-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.luochangcheng</groupId>
+            <artifactId>cc-cloud-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.luochangcheng</groupId>
+            <artifactId>cc-cloud-starter-elk</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.luochangcheng</groupId>
+            <artifactId>cc-cloud-starter-web</artifactId>
+        </dependency>
+
+        <!-- xxl-job -->
+        <dependency>
+            <groupId>com.xuxueli</groupId>
+            <artifactId>xxl-job-core</artifactId>
+            <version>${xxl-job-core.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+</project>

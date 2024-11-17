@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.luochangcheng</groupId>
+        <artifactId>easy-cloud</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <modules>
+        <module>cc-cloud-gateway</module>
+        <module>cc-cloud-manage</module>
+        <module>cc-cloud-monitor</module>
+        <module>cc-cloud-user</module>
+        <module>cc-cloud-xxl-job-executor</module>
+    </modules>
+
+    <artifactId>cc-cloud-module</artifactId>
+    <name>cc-cloud-module</name>
+    <description>cc-cloud-module</description>
+    <packaging>pom</packaging>
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <skipTests>true</skipTests>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.github.luochangcheng</groupId>
+                <artifactId>cc-cloud-config</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.luochangcheng</groupId>
+                <artifactId>cc-cloud-mybatis-plus-repository</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

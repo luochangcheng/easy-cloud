@@ -1,0 +1,13 @@
+server:
+  port: 8005
+  http2:
+    enabled: true
+
+spring:
+  application:
+    name: monitor
+  profiles:
+    active: @profile.name@
+    include: cc-cloud-@profile.name@
+
+

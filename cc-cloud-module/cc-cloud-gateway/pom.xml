@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.luochangcheng</groupId>
+        <artifactId>cc-cloud-module</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>cc-cloud-gateway</artifactId>
+    <name>cc-cloud-gateway</name>
+    <description>cc-cloud-gateway</description>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>io.github.luochangcheng</groupId>
+            <artifactId>cc-cloud-starter-nacos-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.luochangcheng</groupId>
+            <artifactId>cc-cloud-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.luochangcheng</groupId>
+            <artifactId>cc-cloud-starter-elk</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.luochangcheng</groupId>
+            <artifactId>cc-cloud-starter-knife4j-gateway</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.luochangcheng</groupId>
+            <artifactId>cc-cloud-starter-auth</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.luochangcheng</groupId>
+            <artifactId>cc-cloud-starter-redis</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+</project>

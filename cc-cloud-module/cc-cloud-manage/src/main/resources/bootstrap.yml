@@ -1,0 +1,11 @@
+server:
+  port: 8003
+  http2:
+    enabled: true
+
+spring:
+  application:
+    name: manage
+  profiles:
+    active: @profile.name@
+    include: cc-cloud-@profile.name@

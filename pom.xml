@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.luochangcheng</groupId>
+        <artifactId>cc-cloud-starter-parent</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <modules>
+        <module>cc-cloud-common</module>
+        <module>cc-cloud-module</module>
+    </modules>
+
+    <artifactId>easy-cloud</artifactId>
+    <version>1.0</version>
+    <name>easy-cloud</name>
+    <description>easy-cloud</description>
+    <packaging>pom</packaging>
+
+    <properties>
+        <xxl-job-core.version>2.4.1</xxl-job-core.version>
+        <spring-boot-admin-starter-server.version>3.2.3</spring-boot-admin-starter-server.version>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <skipTests>true</skipTests>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <profile.name>dev</profile.name>
+                <config.server-addr>127.0.0.1:8848</config.server-addr>
+                <config.namespace>bdd85aa8-fa15-43a4-9668-61e2a3f60fe8</config.namespace>
+                <config.username>nacos</config.username>
+                <config.password>cc-cloud</config.password>
+                <config.group>DEFAULT_GROUP</config.group>
+                <config.prefix>cc-cloud</config.prefix>
+                <config.suffix>yaml</config.suffix>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <profile.name>test</profile.name>
+                <config.server-addr>127.0.0.1:8848</config.server-addr>
+                <config.namespace>bdd85aa8-fa15-43a4-9668-61e2a3f60fe8</config.namespace>
+                <config.username>nacos</config.username>
+                <config.password>cc-cloud</config.password>
+                <config.group>DEFAULT_GROUP</config.group>
+                <config.prefix>cc-cloud</config.prefix>
+                <config.suffix>yaml</config.suffix>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <profile.name>prod</profile.name>
+                <config.server-addr>127.0.0.1:8848</config.server-addr>
+                <config.namespace>bdd85aa8-fa15-43a4-9668-61e2a3f60fe8</config.namespace>
+                <config.username>nacos</config.username>
+                <config.password>cc-cloud</config.password>
+                <config.group>DEFAULT_GROUP</config.group>
+                <config.prefix>cc-cloud</config.prefix>
+                <config.suffix>yaml</config.suffix>
+            </properties>
+        </profile>
+    </profiles>
+
+</project>

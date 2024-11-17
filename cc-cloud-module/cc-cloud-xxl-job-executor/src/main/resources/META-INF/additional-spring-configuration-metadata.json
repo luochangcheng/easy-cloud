@@ -1,0 +1,47 @@
+{
+  "properties": [
+    {
+      "name": "cc-cloud.xxl-job",
+      "description": "xxl-job配置"
+    },
+    {
+      "name": "cc-cloud.xxl-job.address",
+      "type": "java.lang.String",
+      "description": "xxl-job服务器地址"
+    },
+    {
+      "name": "cc-cloud.xxl-job.access-token",
+      "type": "java.lang.String",
+      "description": "token"
+    },
+    {
+      "name": "cc-cloud.xxl-job.executor",
+      "description": "执行器配置"
+    },
+    {
+      "name": "cc-cloud.xxl-job.executor.app-name",
+      "type": "java.lang.String",
+      "description": "执行器名称"
+    },
+    {
+      "name": "cc-cloud.xxl-job.executor.ip",
+      "type": "java.lang.String",
+      "description": "执行器ip"
+    },
+    {
+      "name": "cc-cloud.xxl-job.executor.port",
+      "type": "java.lang.String",
+      "description": "执行器端口"
+    },
+    {
+      "name": "cc-cloud.xxl-job.executor.log-path",
+      "type": "java.lang.String",
+      "description": "执行器日志路径"
+    },
+    {
+      "name": "cc-cloud.xxl-job.executor.log-retention-days",
+      "type": "java.lang.String",
+      "description": "执行器日志保留天数"
+    }
+  ]
+}

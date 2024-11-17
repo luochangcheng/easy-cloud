@@ -1,0 +1,13 @@
+server:
+  port: 8001
+  http2:
+    enabled: true
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: gateway
+  profiles:
+    active: @profile.name@
+    include: cc-cloud-@profile.name@

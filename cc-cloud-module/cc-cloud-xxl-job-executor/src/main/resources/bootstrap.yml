@@ -1,0 +1,14 @@
+server:
+  port: 8004
+  http2:
+    enabled: true
+
+spring:
+  application:
+    name: job
+  profiles:
+    active: @profile.name@
+    include: cc-cloud-@profile.name@
+
+
+

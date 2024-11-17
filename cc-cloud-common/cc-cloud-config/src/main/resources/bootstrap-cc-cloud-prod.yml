@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: @config.server-addr@
+      username: @config.username@
+      password: @config.password@
+      config:
+        prefix: @config.prefix@
+        file-extension: @config.suffix@
+        namespace: @config.namespace@
+        group: @config.group@
+        extension-configs:
+          - data-id: @config.prefix@-${spring.application.name}.@config.suffix@
+            refresh: true
+      discovery:
+        namespace: @config.namespace@
+        group: @config.group@
+
+cc-cloud:
+  log:
+    #日志保存路径
+    path: /home/logs/cc-cloud/${spring.application.name}
+    #日志保留最大天数
+    max-history: 7
+    #logstash配置
+    logstash:
+      server-ip: 127.0.0.1
+      server-port: 4560
